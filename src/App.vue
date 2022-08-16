@@ -37,6 +37,7 @@
       margin: .07rem 0 .02rem 0;
       font-size: .18rem;
     }
+
     &--active {
       color: #1FA4FC;
     }

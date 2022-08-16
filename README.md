@@ -23,3 +23,16 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 京东商城实战
+
+
+### GIT使用命令
+
+```
+git pull origin master  拉取远程master分支的代码
+
+git add . 把修改的加入暂存区
+
+git commit -m ''   把修改的加入本地.git文件夹下的仓库
+
+git push origin master 提交修改到远程
+```
