@@ -1,7 +1,6 @@
-# jingdong
-<<<<<<< HEAD
+# 京东实战
 
-## Project setup
+## 拉取项目后，先下载依赖
 ```
 npm install
 ```
@@ -23,6 +22,4 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-=======
 京东商城实战
->>>>>>> 9b5073314349c323c028ac405d5c73951b19622c
