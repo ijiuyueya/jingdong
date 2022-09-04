@@ -24,11 +24,11 @@
           >清空购物车</span>
         </div>
       </div>
-      <template
-        v-for="item in productList"
-        :key="item._id"
-      >
-        <div class="product__item" v-if="item.count > 0">
+        <div
+          class="product__item"
+          v-for="item in productList"
+          :key="item._id"
+          >
           <div
             class="product__item__checked iconfont"
             v-html="item.check ? '&#xe626;': '&#xe61a;'"
@@ -44,17 +44,16 @@
           </div>
           <div class="product__number">
             <span
-              class="product__number__minus"
+              class="product__number__minus iconfont"
               @click="() => { changeCartItemInfo(shopId, item._id, item, -1) }"
-            >-</span>
+            >&#xe780;</span>
               {{item.count || 0}}
             <span
-              class="product__number__plus"
+              class="product__number__plus iconfont"
               @click="() => { changeCartItemInfo(shopId, item._id, item, 1) }"
-            >+</span>
+            >&#xe620;</span>
           </div>
         </div>
-      </template>
     </div>
     <div class="check">
       <div class="check__icon">
@@ -68,7 +67,7 @@
       <div class="check__info">
         总计：<span class="check__info__price">&yen; {{calculations.price}}</span>
       </div>
-      <div class="check__btn">
+      <div class="check__btn" v-show="calculations.total > 0">
         <router-link :to="{path: `/OrderConfirmation/${shopId}`}">
           去结算
         </router-link>
@@ -117,7 +116,7 @@ const toggleCartEffect = () => {
   const handleCartShowChange = () => {
     showCart.value = !showCart.value;
   }
-  return { showCart, handleCartShowChange}
+  return { showCart, handleCartShowChange }
 }
 
 export default {
@@ -166,7 +165,7 @@ export default {
   &__header {
     display: flex;
     line-height: .52rem;
-    border-bottom: 1px solid $content-bgColor;
+    border-bottom: .01rem solid $content-bgColor;
     font-size: .14rem;
     color: $content-fontcolor;
     &__all {
@@ -236,24 +235,16 @@ export default {
       position: absolute;
       right: 0;
       bottom: .26rem;
-      &__minus, &__plus
-       {
-        display: inline-block;
-        width: .2rem;
-        height: .2rem;
-        line-height: .16rem;;
-        border-radius: 50%;
-        font-size: .2rem;
-        text-align: center;
-      }
       &__minus {
-        border: .01rem solid $medium-fontColor;
+        position:relative;
+        top:.02rem;
         color: $medium-fontColor;
         margin-right: .05rem;
       }
       &__plus {
-        background: $btn-bgColor;
-        color: $bgColor;
+        position:relative;
+        top:.02rem;
+        color: $btn-bgColor;
         margin-left: .05rem;
       }
     }

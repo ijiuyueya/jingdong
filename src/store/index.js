@@ -80,6 +80,9 @@ export default Vuex.createStore({
         }
       }
       setLocalCartList(state)
+    },
+    cleanCartData(state, shopId){
+       state.cartList[shopId].productList = {}
     }
   },
   actions: {
